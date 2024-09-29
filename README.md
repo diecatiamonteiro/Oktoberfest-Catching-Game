@@ -2,8 +2,7 @@
 
 **Oktoberfest Frenzy** is an interactive web-based game where players catch falling objects (pretzels and beers) during an Oktoberfest celebration. The goal is to catch as many pretzels and beers as possible while avoiding missing more than 3 objects!
 
-<img src="./images/brezel.png" alt="Brezel" width="100" />
-<img src="./images/beer.png" alt="Beer" width="100" />
+<img src="./images/brezel.png" alt="Brezel" width="100" /><img src="./images/beer.png" alt="Beer" width="100" />
 
 <br>
 
@@ -46,7 +45,7 @@ This game was created as a fun way to practice **event listeners** in JavaScript
 
 You can play **Oktoberfest Frenzy** directly in your browser through GitHub Pages. No setup is required!
 
-[Click here to play the game](https://your-username.github.io/your-repository-name)
+[Click here to play the game](https://diecatiamonteiro.github.io/Oktoberfest-Catching-Game/)
 
 ## Game Preview
 
