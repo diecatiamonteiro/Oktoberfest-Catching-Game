@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>92-falling-objects-exercise</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            font-size: 2rem;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #gameArea {
+            width: 400px;
+            height: 500px;
+            border: 2px solid black;
+            position: relative;
+            background-color: lightblue;
+        }
+
+        #basket {
+            width: 60px;
+            height: 20px;
+            background-color: green;
+            position: absolute;
+            bottom: 0;
+            left: 170px;
+        }
+
+        .fallingObject {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gameArea">
+        <div id="basket"></div>
+    </div>
+    <div>
+        Score: <span id="score">0</span>
+        Missed: <span id="missed">0</span>
+    </div>
+    <button id="startButton">Start Game</button>
+    <button id="stopButton">Stop Game</button>
+
+    <script>
+        const gameArea = document.getElementById('gameArea');
+        const basket = document.getElementById('basket');
+        const scoreDisplay = document.getElementById('score');
+        const missedDisplay = document.getElementById('missed');
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+
+        let score = 0;
+        let missed = 0;
+        let basketPosition = 170;
+        let objectInterval;
+
+        // Start and stop buttons
+        startButton.addEventListener('click', startGame);
+        stopButton.addEventListener('click', stopGame);
+
+        // Handle keyboard controls for moving the basket
+        document.addEventListener('keydown', moveBasket);
+
+        // Start the game
+        function startGame() {
+            score = 0;
+            missed = 0;
+            scoreDisplay.textContent = score;
+            missedDisplay.textContent = missed;
+            startButton.disabled = true;
+            stopButton.disabled = false;
+
+            objectInterval = setInterval(createFallingObject, 1000); // Create a new falling object every second
+        }
+
+        // Stop the game
+        function stopGame() {
+            clearInterval(objectInterval);
+            startButton.disabled = false;
+            stopButton.disabled = true;
+        }
+
+        // Move the basket left or right
+        function moveBasket(event) {
+            if (event.key === 'ArrowLeft' && basketPosition > 0) {
+                basketPosition -= 20;
+            } else if (event.key === 'ArrowRight' && basketPosition < (gameArea.offsetWidth - basket.offsetWidth)) {
+                basketPosition += 20;
+            }
+            basket.style.left = basketPosition + 'px';
+        }
+
+        // Create a falling object
+        function createFallingObject() {
+            const fallingObject = document.createElement('div');
+            fallingObject.classList.add('fallingObject');
+            fallingObject.style.left = Math.random() * (gameArea.offsetWidth - 20) + 'px';
+            gameArea.appendChild(fallingObject);
+
+            let objectPosition = 0;
+            const fallInterval = setInterval(() => {
+                if (objectPosition >= (gameArea.offsetHeight - basket.offsetHeight)) {
+                    clearInterval(fallInterval);
+                    gameArea.removeChild(fallingObject);
+
+                    // Check if the object is caught by the basket
+                    if (parseInt(fallingObject.style.left) >= basketPosition &&
+                        parseInt(fallingObject.style.left) <= basketPosition + basket.offsetWidth) {
+                        score++;
+                        scoreDisplay.textContent = score;
+                    } else {
+                        missed++;
+                        missedDisplay.textContent = missed;
+                        if (missed >= 3) {
+                            alert('Game Over! You missed 3 objects.');
+                            stopGame();
+                        }
+                    }
+                } else {
+                    objectPosition += 5;
+                    fallingObject.style.top = objectPosition + 'px';
+                }
+            }, 20);
+        }
+
+    </script>
+</body>
+
+</html>

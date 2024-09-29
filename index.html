@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Icon -->
+    <script
+      src="https://kit.fontawesome.com/428648f03a.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Prevent the browser from making a request for the favicon.ico, avoiding the 404 error -->
+    <link rel="icon" href="data:," />
+
+    <link rel="stylesheet" href="./style.css" />
+    <title>Oktoberfest Frenzy Catching Game</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <h1>Oktoberfest Frenzy</h1>
+    <div id="gameArea">
+      <div id="collector"></div>
+      <i class="volume-icon fa-solid fa-volume-high"></i>
+    </div>
+    <div id="bottomContainer">
+      <div id="scoreSection">
+        <p>Score: <span id="score">0</span></p>
+        <p>Missed (max 3): <span id="missed">0</span></p>
+      </div>
+      <div id="buttonSection">
+        <button id="startButton">Start Game</button>
+        <button id="stopButton">Stop Game</button>
+      </div>
+    </div>
+    <audio id="backgroundMusic" src="./audio/intro-song.mp3" loop></audio>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
