@@ -34,7 +34,7 @@ This game was created as a fun way to practice **event listeners** in JavaScript
    - **Beers** score 1 point.
 3. **Avoid Missing**: You can miss up to 3 objects. After 3 misses, the game ends.
 
-**Note**: This game is intended to be played on a desktop computer. It is not optimized for mobile devices yet.
+**Note**: This game is intended to be played on a computer. It is not optimized for mobile devices yet.
 
 ## Technological Components
 
@@ -48,7 +48,7 @@ This game was created as a fun way to practice **event listeners** in JavaScript
 ## Start Playing
 
 You can play **Oktoberfest Frenzy** directly in your browser through GitHub Pages. No setup is required!   
-**Note**: This game is intended to be played on a desktop computer. It is not optimized for mobile devices yet.
+**Note**: This game is intended to be played on a computer. It is not optimized for mobile devices yet.
 
 [Click here to play the game](https://diecatiamonteiro.github.io/Oktoberfest-Catching-Game/)
 
