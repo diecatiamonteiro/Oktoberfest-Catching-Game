@@ -8,6 +8,8 @@
 
 This game was created as a fun way to practice **event listeners** in JavaScript, focusing on real-time interactions, keypress handling, and dynamic DOM manipulation. You might be wondering—why an Oktoberfest theme? Well, it's October, this year's edition is coming to an end, and as a fan of the event (controversial, I know!), I thought it would be the perfect inspiration. I had a blast coding and playing this game, and I hope you enjoy it too!
 
+**Note**: This game is designed for desktop browsers and is not suitable (at least yet) for mobile devices.
+
 ## Table of Contents
 
 - [Game Features](#game-features)
@@ -31,6 +33,8 @@ This game was created as a fun way to practice **event listeners** in JavaScript
    - **Pretzels** score 2 points.
    - **Beers** score 1 point.
 3. **Avoid Missing**: You can miss up to 3 objects. After 3 misses, the game ends.
+
+**Note**: This game is intended to be played on a desktop computer. It is not optimized for mobile devices yet
 
 ## Technological Components
 
