@@ -150,7 +150,7 @@ function createFallingObject() {
     fallingObject.style.top = `${fallingPosition}px`;
 
     // Calculate top position of collector
-    const collectorTop = gameArea.offsetHeight - 300 - 20; // Collector height (280px  but gave it a bit more to match the tray better) and 20px from the bottom
+    const collectorTop = gameArea.offsetHeight - 300 - 20; // Collector height (290px  but gave it a bit more to match the tray better) and 20px from the bottom
     const gameAreaBottom = gameArea.offsetHeight;
 
     // Check if object is within the collector's horizontal range
